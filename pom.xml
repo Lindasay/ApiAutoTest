@@ -131,7 +131,7 @@
         </resources>
 
         <filters>
-            <filter>src/main/filters/filter-${env}.properties</filter>
+            <filter>src/main/filters/filter-${profilesActive}.properties</filter>
         </filters>
         <plugins>
             <plugin>
@@ -174,34 +174,58 @@
         </plugins>
     </build>
 
-    <!-- 不同的打包环境 -->
+    <!--&lt;!&ndash; 不同的打包环境 &ndash;&gt;-->
+    <!--<profiles>-->
+        <!--&lt;!&ndash; 开发环境，默认激活 &ndash;&gt;-->
+        <!--<profile>-->
+            <!--<id>dev</id>-->
+            <!--<properties>-->
+                <!--<env>dev</env>-->
+            <!--</properties>-->
+        <!--</profile>-->
+
+        <!--&lt;!&ndash; 生产环境 &ndash;&gt;-->
+        <!--<profile>-->
+            <!--<id>product</id>-->
+            <!--<properties>-->
+                <!--<env>product</env>-->
+            <!--</properties>-->
+
+        <!--</profile>-->
+
+        <!--&lt;!&ndash; 测试环境 &ndash;&gt;-->
+        <!--<profile>-->
+            <!--<id>debug</id>-->
+            <!--<properties>-->
+                <!--<env>debug</env>-->
+            <!--</properties>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>&lt;!&ndash;默认启用的是dev环境配置&ndash;&gt;-->
+            <!--</activation>-->
+        <!--</profile>-->
+    <!--</profiles>-->
+
     <profiles>
-        <!-- 开发环境，默认激活 -->
         <profile>
             <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
-                <env>dev</env>
+                <profilesActive>dev</profilesActive>
             </properties>
         </profile>
-
-        <!-- 生产环境 -->
-        <profile>
-            <id>product</id>
-            <properties>
-                <env>product</env>
-            </properties>
-
-        </profile>
-
-        <!-- 测试环境 -->
         <profile>
             <id>debug</id>
             <properties>
-                <env>debug</env>
+                <profilesActive>debug</profilesActive>
             </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault><!--默认启用的是dev环境配置-->
-            </activation>
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <profilesActive>product</profilesActive>
+            </properties>
         </profile>
     </profiles>
 
