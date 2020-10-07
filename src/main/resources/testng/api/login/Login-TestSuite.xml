@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="login-登录分类-测试集合" verbose="1" preserve-order="true">
+    <parameter name="report.config" value="src/main/resources/config/report/extent-config.xml"/>
+    <parameter name="system.info" value="com.hyk.configs.MySystemInfo"/>
+
+    <test name="搜索分类 接口" preserve-order="true">
+        <classes>
+            <class name="com.hyk.Login.TestLogin"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.hyk.listeners.MyExtentTestNgFormatter"/>
+    </listeners>
+</suite>
