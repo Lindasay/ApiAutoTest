@@ -130,9 +130,9 @@
             </resource>
         </resources>
 
-        <filters>
-            <filter>src/main/filters/filter-${profilesActive}.properties</filter>
-        </filters>
+        <!--<filters>-->
+            <!--<filter>src/main/filters/filter-${profilesActive}.properties</filter>-->
+        <!--</filters>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -141,10 +141,10 @@
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <encoding>UTF-8</encoding>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${project.basedir}/target/classes/testng/api/${xmlFileName}</suiteXmlFile>
-                        <!--<suiteXmlFile>${project.basedir}/target/classes/testNg/api/push/RegisterToken-TestSuite.xml</suiteXmlFile>-->
-                    </suiteXmlFiles>
+                    <!--<suiteXmlFiles>-->
+                        <!--<suiteXmlFile>${project.basedir}/target/classes/testng/api/${xmlFileName}</suiteXmlFile>-->
+                        <!--&lt;!&ndash;<suiteXmlFile>${project.basedir}/target/classes/testNg/api/push/RegisterToken-TestSuite.xml</suiteXmlFile>&ndash;&gt;-->
+                    <!--</suiteXmlFiles>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -205,28 +205,28 @@
         <!--</profile>-->
     <!--</profiles>-->
 
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <profilesActive>dev</profilesActive>
-            </properties>
-        </profile>
-        <profile>
-            <id>debug</id>
-            <properties>
-                <profilesActive>debug</profilesActive>
-            </properties>
-        </profile>
-        <profile>
-            <id>product</id>
-            <properties>
-                <profilesActive>product</profilesActive>
-            </properties>
-        </profile>
-    </profiles>
+    <!--<profiles>-->
+        <!--<profile>-->
+            <!--<id>dev</id>-->
+            <!--<activation>-->
+                <!--<activeByDefault>true</activeByDefault>-->
+            <!--</activation>-->
+            <!--<properties>-->
+                <!--<profilesActive>dev</profilesActive>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>debug</id>-->
+            <!--<properties>-->
+                <!--<profilesActive>debug</profilesActive>-->
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>product</id>-->
+            <!--<properties>-->
+                <!--<profilesActive>product</profilesActive>-->
+            <!--</properties>-->
+        <!--</profile>-->
+    <!--</profiles>-->
 
 </project>
